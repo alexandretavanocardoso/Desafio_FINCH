@@ -1,0 +1,28 @@
+﻿@model Desafio_FINCH.Models.User;
+
+@{ ViewData["Title"] = "Login"; }
+
+@section Styles{ <link href="~/css/Login.css" rel="stylesheet" /> }
+
+<div class="divPrincipal">
+    <form asp-action="Login" asp-controller="Login">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="Email" class="form-label mg-top"></label>
+                <input asp-for="Email" type="email" class="form-control tamanhaInputs">
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+                <label asp-for="Senha" for="senhaId" class="form-label mg-top"></label>
+                <input asp-for="Senha" type="password" class="form-control tamanhaInputs">
+                <span asp-validation-for="Senha" class="text-danger"></span>
+
+                <input type="submit" value="Entrar" class="btn btn-primary mg-top" />
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,38 @@
+﻿@model Desafio_FINCH.Models.Bored;
+
+@{ ViewData["Title"] = "Home"; }
+
+@section Styles{ <link href="~/css/Home.css" rel="stylesheet" /> }
+
+<div class="text-center divPrincipal">
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <h4>@Model.Activity</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Accessibility:</b> @Model.Accessibility</li>
+                <li class="list-group-item"><b>Type:</b> @Model.Type</li>
+                <li class="list-group-item"><b>Participants:</b> @Model.Participants</li>
+                <li class="list-group-item"><b>Price:</b> @Model.Price</li>
+                <li class="list-group-item">
+                    <b>Link:</b>
+                    @if (string.IsNullOrEmpty(@Model.Link)) {
+                        <text>
+                            Sem link.
+                        </text>
+                    } else {
+                        <text>
+                            <a href="@Model.Link" target="_blank">@Model.Link</a>
+                        </text>
+                    }
+                </li>
+            </ul>
+        </div>
+
+        <div class="mg-top">
+            <a class="btn btn-dark" asp-action="Index" asp-controller="Home">Carregar próxima</a>
+            <a class="btn btn-danger" asp-action="Index" asp-controller="Login">Sair</a>
+        </div>
+    </div>
+</div>

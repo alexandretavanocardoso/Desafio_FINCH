@@ -1,0 +1,14 @@
+﻿.mg-top {
+    margin-top: 12px;
+}
+
+.divPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25vh;
+}
+
+.tamanhaInputs {
+    width: 400px;
+}
